@@ -32,7 +32,7 @@ if len(isbn) != 10 and len(isbn) != 13:
   print("ISBN values are 10 or 13 digits long")
   sys.exit()
 
-URL = "http://openlibrary.org/api/books?bibkeys=ISBN:{isbn}&format=json&jscmd=data"
+URL = "https://openlibrary.org/api/books?bibkeys=ISBN:{isbn}&jscmd=data&format=json"
 
 r = requests.get(URL.format(isbn=isbn))
 print(r.text)
