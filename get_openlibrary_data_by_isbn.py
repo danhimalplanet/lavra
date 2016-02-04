@@ -15,12 +15,12 @@ except IndexError:
 
 isbn = sys.argv[1]
 
-if len(isbn) != 10 and len(isbn) != 13:
-  print("ISBN values are 10 or 13 digits long")
-  sys.exit()
-
 if not isbn.isdigit():
   print("ISBN values contain only digits")
+  sys.exit()
+
+if len(isbn) != 10 and len(isbn) != 13:
+  print("ISBN values are 10 or 13 digits long")
   sys.exit()
 
 URL = "http://openlibrary.org/api/books?bibkeys=ISBN:{isbn}&format=json&jscmd=data"
