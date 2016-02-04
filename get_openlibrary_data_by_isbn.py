@@ -17,7 +17,7 @@ try:
     isbn = sys.argv[1]
   else:
     print("Usage: %s ISBN" % str(sys.argv[0]))
-    sys.exit()
+    sys.exit(1)
 except IndexError:
   print("Usage: %s ISBN" % str(sys.argv[0]))
   sys.exit(1)
