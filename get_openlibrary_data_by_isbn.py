@@ -1,5 +1,14 @@
 #!/usr/bin/env python
 
+"""
+get book info with ISBN via openlibrary api
+
+Example usage:
+
+ % ./get_openlibrary_data_by_isbn.py 1111111111
+{"ISBN:1111111111": {"publishers": [{"name": "test publisher"}], "title": "test title", "url": "http://openlibrary.org/books/OL25760947M/test_title", "identifiers": {"openlibrary": ["OL25760947M"], "isbn_10": ["1111111111"]}, "publish_date": "2015", "key": "/books/OL25760947M", "authors": [{"url": "http://openlibrary.org/authors/OL650810A/abhishek_gaurav", "name": "abhishek gaurav"}]}}
+"""
+
 import requests
 import sys
 
