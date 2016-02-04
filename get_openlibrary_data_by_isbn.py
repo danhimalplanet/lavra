@@ -35,4 +35,9 @@ if len(isbn) != 10 and len(isbn) != 13:
 URL = "https://openlibrary.org/api/books?bibkeys=ISBN:{isbn}&jscmd=data&format=json"
 
 r = requests.get(URL.format(isbn=isbn))
-print(r.text)
+
+if(r.status_code == 200):
+  print(r.text)
+else:
+  print("Failed to properly contact API")
+  sys.exit()
