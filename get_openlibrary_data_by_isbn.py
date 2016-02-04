@@ -20,17 +20,17 @@ try:
     sys.exit()
 except IndexError:
   print("Usage: %s ISBN" % str(sys.argv[0]))
-  sys.exit()
+  sys.exit(1)
 
 isbn = sys.argv[1]
 
 if not isbn.isdigit():
   print("ISBN values contain only digits")
-  sys.exit()
+  sys.exit(1)
 
 if len(isbn) != 10 and len(isbn) != 13:
   print("ISBN values are 10 or 13 digits long")
-  sys.exit()
+  sys.exit(1)
 
 URL = "https://openlibrary.org/api/books?bibkeys=ISBN:{isbn}&jscmd=data&format=json"
 
@@ -40,4 +40,4 @@ if(r.status_code == 200):
   print(r.text)
 else:
   print("Failed to properly contact API")
-  sys.exit()
+  sys.exit(1)
